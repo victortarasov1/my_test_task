@@ -15,7 +15,7 @@ public class ReaderImpl implements Reader {
     @Override
     public List<String> readData() {
         try {
-            var numOfRows = Integer.parseInt(reader.readLine());
+            var numOfRows = Integer.parseInt(reader.readLine().trim());
             var lines = new ArrayList<String>();
             for (var i = 0; i < numOfRows; i++) lines.add(reader.readLine());
             return lines;
