@@ -17,7 +17,7 @@ public class ReaderImpl implements Reader {
         try {
             var numOfRows = Integer.parseInt(reader.readLine().trim());
             var lines = new ArrayList<String>();
-            for (var i = 0; i < numOfRows; i++) lines.add(reader.readLine());
+            for (var i = 0; i < numOfRows; i++) lines.add(reader.readLine().trim());
             return lines;
         } catch (IOException ex) {
             throw new RuntimeException("can't read the file", ex);
