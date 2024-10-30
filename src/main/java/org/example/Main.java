@@ -36,12 +36,12 @@ public class Main {
         reader.readData().forEach(processor::process);
     }
 
-    private static ReaderImpl createReader() throws FileNotFoundException {
+    private static Reader createReader() throws FileNotFoundException {
         var bufferedReader = new BufferedReader(new FileReader("test_file.csv"));
         return new ReaderImpl(bufferedReader);
     }
 
-    private static ProcessorImpl createProcessor() {
+    private static Processor createProcessor() {
         var formatter = new DateTimeFormatterBuilder().append(DateTimeFormatter.ofPattern("[dd.MM.yyyy]" + "[d.MM.yyyy]" )).toFormatter();
         var repository = new MockTimeLineRepoImpl();
         var service = new TimeLineServiceImpl(repository);
